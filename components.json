@@ -1,0 +1,9 @@
+{
+  "button": "./packages/button/index.js",
+  "checkbox": "./packages/checkbox/index.js",
+  "dialog": "./packages/dialog/index.js",
+  "input": "./packages/input/index.js",
+  "load-more": "./packages/load-more/index.js",
+  "switch": "./packages/switch/index.js",
+  "toast": "./packages/toast/index.js"
+}

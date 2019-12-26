@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import WvButton from '../../button';
-
 export default {
   name: 'WvDialog',
   data() {
@@ -45,9 +43,6 @@ export default {
       confirmButtonText: '',
       callback: null
     };
-  },
-  components: {
-    WvButton
   },
   methods: {
     handelMaskClick() {

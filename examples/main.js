@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import WeUIVue from '../src';
+import WeUIVue from 'main/index.js';
 import App from './App.vue';
 
-import '../packages/theme-chalk/src/index.less';
+import 'packages/theme-chalk/src/index.less';
 
 Vue.use(WeUIVue);
 
