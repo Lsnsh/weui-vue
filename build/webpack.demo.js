@@ -103,10 +103,9 @@ const webpackConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: "public/index.html",
-      // template: "./examples/index.tpl",
-      filename: "index.html"
-      // favicon: "./examples/favicon.ico"
+      template: "./examples/index.tpl",
+      filename: "index.html",
+      favicon: './examples/favicon.ico'
     }),
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
