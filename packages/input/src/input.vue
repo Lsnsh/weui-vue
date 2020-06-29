@@ -1,7 +1,7 @@
 <template>
-  <div class="weui-cell" @mouseenter="hovering = true" @mouseleave="hovering = false">
+  <div class="weui-cell" :class="{'weui-cell_active': clickEffect}" @mouseenter="hovering = true" @mouseleave="hovering = false">
     <div v-if="label" class="weui-cell__hd">
-      <label for class="weui-label">{{ label }}</label>
+      <label class="weui-label">{{ label }}</label>
     </div>
     <div class="weui-cell__bd">
       <input
@@ -29,6 +29,10 @@ export default {
   name: 'WvInput',
   inheritAttrs: false,
   props: {
+    clickEffect: {
+      type: Boolean,
+      default: true
+    },
     clearable: Boolean,
     label: String,
     value: [String, Number],
@@ -60,6 +64,9 @@ export default {
     nativeInputValue() {
       this.setNativeInputValue();
     }
+  },
+  mounted() {
+    this.setNativeInputValue();
   },
   methods: {
     handleCompositionStart() {
