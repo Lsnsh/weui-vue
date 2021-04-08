@@ -11,8 +11,9 @@
     "build:file": "node build/bin/build-entry.js",
     "build:examples": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js",
     "clean": "rm -rf lib",
-    "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
-    "dist": "npm run clean && npm run build:file && webpack --config build/webpack.common.js"
+    "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
+    "dist": "npm run bootstrap && npm run clean && npm run build:file && webpack --config build/webpack.common.js",
+    "publish": "sh build/release.sh"
   },
   "dependencies": {},
   "peerDependencies": {
