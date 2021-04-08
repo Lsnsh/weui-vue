@@ -9,6 +9,7 @@
   "scripts": {
     "bootstrap": "npm i",
     "build:file": "node build/bin/build-entry.js",
+    "build:examples": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js",
     "clean": "rm -rf lib",
     "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
     "dist": "npm run clean && npm run build:file && webpack --config build/webpack.common.js"
@@ -22,6 +23,7 @@
     "@vue/babel-preset-app": "^4.1.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.0",

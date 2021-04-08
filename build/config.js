@@ -9,21 +9,21 @@ var Components = require('../components.json');
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`weui/packages/${key}`] = `weui/lib/${key}`;
+  externals[`weui-vue/packages/${key}`] = `weui-vue/lib/${key}`;
 });
 
-// externals['weui/src/locale'] = 'weui/lib/locale';
+// externals['weui-vue/src/locale'] = 'weui-vue/lib/locale';
 // utilsList.forEach(function(file) {
 //   file = path.basename(file, '.js');
-//   externals[`weui/src/utils/${file}`] = `weui/lib/utils/${file}`;
+//   externals[`weui-vue/src/utils/${file}`] = `weui-vue/lib/utils/${file}`;
 // });
 // mixinsList.forEach(function(file) {
 //   file = path.basename(file, '.js');
-//   externals[`weui/src/mixins/${file}`] = `weui/lib/mixins/${file}`;
+//   externals[`weui-vue/src/mixins/${file}`] = `weui-vue/lib/mixins/${file}`;
 // });
 // transitionList.forEach(function(file) {
 //   file = path.basename(file, '.js');
-//   externals[`weui/src/transitions/${file}`] = `weui/lib/transitions/${file}`;
+//   externals[`weui-vue/src/transitions/${file}`] = `weui-vue/lib/transitions/${file}`;
 // });
 
 externals = [Object.assign({
@@ -36,7 +36,7 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'weui': path.resolve(__dirname, '../')
+  'weui-vue': path.resolve(__dirname, '../')
 };
 
 exports.vue = {

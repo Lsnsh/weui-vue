@@ -1,6 +1,6 @@
-"use strict";
 const path = require("path");
 const webpack = require("webpack");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
@@ -16,11 +16,11 @@ const webpackConfig = {
   mode: process.env.NODE_ENV,
   entry: isProd
     ? {
-        docs: "./examples/main.js"
-      }
+      docs: "./examples/main.js"
+    }
     : "./examples/main.js",
   output: {
-    path: path.resolve(process.cwd(), "./examples/weui/"),
+    path: path.resolve(process.cwd(), "./examples/weui-vue/"),
     filename: "[name].[hash:7].js",
     chunkFilename: isProd ? "[name].[hash:7].js" : "[name].js"
   },
@@ -52,7 +52,6 @@ const webpackConfig = {
       {
         test: /\.(jsx?|babel|es6)$/,
         include: process.cwd(),
-        // 没有exclude node_modules目录会报错：Uncaught TypeError: Cannot convert undefined or null to object at hasOwnProperty (<anonymous>)
         exclude: config.jsexclude,
         loader: "babel-loader"
       },
@@ -83,16 +82,15 @@ const webpackConfig = {
                 preserveWhitespace: false
               }
             }
+          },
+          {
+            loader: path.resolve(__dirname, "./md-loader/index.js")
           }
-          // {
-          //   loader: path.resolve(__dirname, "./md-loader/index.js")
-          // }
         ]
       },
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
         loader: "url-loader",
-        // todo: 这种写法有待调整
         query: {
           limit: 10000,
           name: path.posix.join("static", "[name].[hash:7].[ext]")
@@ -101,11 +99,12 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./examples/index.tpl",
       filename: "index.html",
-      favicon: './examples/favicon.ico'
+      favicon: "./examples/favicon.ico"
     }),
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
@@ -127,11 +126,11 @@ const webpackConfig = {
 };
 
 if (isProd) {
-  webpackConfig.externals = {
-    vue: "Vue",
-    "vue-router": "VueRouter",
-    "highlight.js": "hljs"
-  };
+  // webpackConfig.externals = {
+  //   vue: "Vue",
+  //   "vue-router": "VueRouter",
+  //   "highlight.js": "hljs"
+  // };
   webpackConfig.plugins.push(
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:7].css"
@@ -150,7 +149,7 @@ if (isProd) {
     cacheGroups: {
       vendor: {
         test: /\/src\//,
-        name: "weui",
+        name: "weui-vue",
         chunks: "all"
       }
     }

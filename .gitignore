@@ -4,6 +4,7 @@ node_modules
 # Bundle output
 /dist
 /lib
+examples/weui-vue
 
 # Log files
 npm-debug.log*
