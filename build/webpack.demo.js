@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = require("./config");
 
@@ -99,14 +98,15 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new ProgressBarPlugin(),
     new CleanWebpackPlugin(),
+    new OptimizeCSSAssetsPlugin({}),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./examples/index.tpl",
       filename: "index.html",
       favicon: "./examples/favicon.ico"
     }),
-    new ProgressBarPlugin(),
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       "process.env.FAAS_ENV": JSON.stringify(process.env.FAAS_ENV)
@@ -117,10 +117,9 @@ const webpackConfig = {
           preserveWhitespace: false
         }
       }
-    })
+    }),
   ],
   optimization: {
-    minimizer: []
   },
   devtool: "#eval-source-map"
 };
@@ -135,14 +134,6 @@ if (isProd) {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:7].css"
     })
-  );
-  webpackConfig.optimization.minimizer.push(
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: false
-    }),
-    new OptimizeCSSAssetsPlugin({})
   );
   // https://webpack.js.org/configuration/optimization/#optimizationsplitchunks
   webpackConfig.optimization.splitChunks = {
