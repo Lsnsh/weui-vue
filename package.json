@@ -1,13 +1,17 @@
 {
-  "name": "weui-vue",
+  "name": "@lsnsh/weui-vue",
   "version": "0.1.0",
-  "private": true,
   "description": "A Vue.js component library based on WeUI.",
   "main": "lib/weui-vue.common.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "bootstrap": "yarn || npm i",
+    "bootstrap": "npm i",
     "build:file": "node build/bin/build-entry.js",
-    "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js"
+    "clean": "rm -rf lib",
+    "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
+    "dist": "npm run clean && npm run build:file && webpack --config build/webpack.common.js"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -72,9 +76,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lsnsh/weui-vue/issues"
   },
-  "homepage": "https://github.com/Lsnsh/weui-vue#readme"
+  "homepage": "https://github.com/Lsnsh/weui-vue#readme",
+  "directories": {
+    "lib": "lib"
+  }
 }
