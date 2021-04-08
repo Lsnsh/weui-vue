@@ -2,7 +2,7 @@
   <transition name="wv-fade-in">
     <div v-show="visible">
       <div :class="[mask ? 'weui-mask' : 'weui-mask_transparent']"></div>
-      <div :class="['weui-toast', !icon ? 'wv-toast' : '']">
+      <div :class="['weui-toast', !icon ? 'wv-toast_text' : '']">
         <i v-if="icon && !iconClass" :class="[icon, 'weui-icon_toast']"></i>
         <i v-else :class="iconClass"></i>
         <p v-if="text" class="weui-toast__content">{{ text }}</p>

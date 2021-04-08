@@ -250,6 +250,7 @@ export default {
 /* .page {} */
 .page-header {
   padding: 30px;
+  background: rgb(237, 237, 237);
 }
 .page-main {
   text-align: center;
@@ -265,12 +266,14 @@ export default {
   margin-bottom: 20px;
 }
 .section-item-header {
-  padding: 10px;
+  margin: 0 20px;
+  padding: 10px 0;
   border-radius: 2px;
   text-align: center;
   font-size: 18px;
   color: #6f6f6f;
   background: #ffffff;
+  border-bottom: 1px solid #6f6f6f;
 }
 .section-item-main {
   padding: 20px 0;

@@ -1,6 +1,10 @@
-.DS_Store
+# Dependencies
 node_modules
+
+# Bundle output
 /dist
+/lib
+examples/weui-vue
 
 # Log files
 npm-debug.log*
@@ -9,4 +13,4 @@ npm-debug.log*
 .vscode
 
 # Other files
-TODO.md
+.DS_Store
