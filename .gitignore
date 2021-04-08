@@ -1,6 +1,9 @@
-.DS_Store
+# Dependencies
 node_modules
+
+# Bundle output
 /dist
+/lib
 
 # Log files
 npm-debug.log*
@@ -9,4 +12,4 @@ npm-debug.log*
 .vscode
 
 # Other files
-TODO.md
+.DS_Store
