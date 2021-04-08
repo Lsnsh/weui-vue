@@ -12,36 +12,36 @@
 
 ### 组件列表
 
-- [x] button
-- [ ] form
-  - [ ] form/form-item
-  - [x] input
-  - [x] checkbox
-  - [ ] radio
-  - [x] switch
-  - [ ] selece
-  - [ ] textarea
-- [ ] list
-- [ ] slider
-- [ ] uploader
-- [ ] article
-- [ ] badge
-- [ ] flex
-- [ ] footer
-- [ ] gallery
-- [ ] grid
-- [x] icons
-- [x] loadmore
-- [ ] panel
-- [ ] preview
-- [ ] progress
-- [ ] actionsheet
-- [x] dialog
-- [ ] half-screen dialog
-- [ ] msg
-- [ ] licker
-- [x] toast
-- [ ] top tips
-- [ ] navbar
-- [ ] tabbar
-- [ ] search bar
+- [x] Button
+- [ ] Form
+  - [ ] Form/FormItem
+  - [x] Input
+  - [x] Checkbox
+  - [ ] Radio
+  - [x] Switch
+  - [ ] Selece
+  - [ ] Textarea
+- [ ] List
+- [ ] Slider
+- [ ] Uploader
+- [ ] Article
+- [ ] Badge
+- [ ] Flex
+- [ ] Footer
+- [ ] Gallery
+- [ ] Grid
+- [x] Icons
+- [x] LoadMore
+- [ ] Panel
+- [ ] Preview
+- [ ] Progress
+- [ ] Actionsheet
+- [x] Dialog
+- [ ] Half-screen Dialog
+- [ ] Msg
+- [ ] Picker
+- [x] Toast
+- [ ] TopTips
+- [ ] NavBar
+- [ ] TabBar
+- [ ] SearchBar
